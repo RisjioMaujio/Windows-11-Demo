@@ -1,0 +1,626 @@
+// SETTINGS 
+$patterns: 'slow', 'steady', 'half', 'frenetic';
+$bgs: 'teal', 'warm', 'crystal', 'daytime', 'dark';
+$colors: 'red', 'cream', 'gold', 'blue', 'classic', 'white';
+$allColors: join(unquote($bgs), unquote($colors), comma);
+    
+:root {
+   --bg1-teal: rgb(2, 21, 25);
+   --bg2-teal: rgb(43, 68, 70);
+   --bg1-warm: rgb(11, 13, 35);
+   --bg2-warm: rgb(190, 70, 61);
+   --bg1-crystal: rgb(5, 14, 23);
+   --bg2-crystal: rgb(25, 65, 88);
+   --bg1-daytime: rgb(30, 87, 146);
+   --bg2-daytime: rgb(111, 180, 224);
+   --bg1-dark: rgb(15, 10, 10);
+   --bg2-dark: rgb(63, 59, 54);
+
+   --moon: rgba(234, 201, 188, 0.95);
+
+   --light-red: rgb(197, 54, 47);
+   --light-red-secondary: rgb(252,136,113);
+   --light-gold: rgb(242, 207, 118);
+   --light-gold-secondary: rgb(249, 240, 211);
+   //--light-gold: rgb(204, 135, 79);
+   //--light-gold-secondary: rgb(252, 217, 128);
+   --light-blue: rgb(139, 223, 245);
+   --light-blue-secondary: rgb(215, 245, 255);   
+   --light-classic: rgb(102, 136, 101);
+   --light-classic-secondary: rgb(182, 52, 46);
+   // --light-classic: rgb(144, 185, 173);
+   // --light-classic-secondary: rgb(219, 136, 117);
+   --light-white: rgb(250, 250, 250);
+   --light-white-secondary: rgb(160, 160, 160);
+
+   --speed: 3s;
+   --speedInvert: -3s;
+   --width: 2rem;
+   --height: 1rem;
+   
+   --cloudX: 0rem;
+   --cloudY: 0rem;
+}
+
+$cloudSpeed: 35s;
+$snowSpeed: 36;
+
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+   width: 100vw;
+   max-width: 100vw;
+   overflow: hidden;
+   font-family: sans-serif;
+}
+
+// Update variables based on option selected
+@each $val in $colors {
+   .radio[value="#{$val}"]:checked ~ * {
+      --light: var(--light-#{$val});
+      --light-secondary: var(--light-#{$val}-secondary);
+   }
+}
+
+@each $val in $bgs {
+   .radio[value="#{$val}"]:checked {
+      ~ * {
+         --bg1: var(--bg1-#{$val});
+         --bg2: var(--bg2-#{$val});
+      }
+   }
+}
+
+// ---
+
+.bg {
+   position: fixed;
+   top: 0; bottom: 0;
+   left: 0; right: 0;
+   background-image: linear-gradient(rgb(31, 29, 59), rgb(58, 53, 118)); // fallback
+   background-image: linear-gradient(var(--bg1), var(--bg2));
+}
+
+.radio {
+   position: absolute;
+   width: 1px;
+   height: 1px;
+   padding: 0;
+   margin: -1px;
+   overflow: hidden;
+   clip: rect(0,0,0,0);
+   border: 0;
+}
+
+.moon {
+   top: 50%;
+   left: 50%;
+   width: 4rem;
+   height: 4rem;
+   position: absolute;
+   background-color: rgb(234, 201, 188); // fallback
+   background-color: var(--moon);
+   transform: translate(4rem, -15rem);
+   border-radius: 50%;
+}
+
+.cloud {
+   top: 50%;
+   left: 50vw;
+   transform: translate(-7em, -5rem);
+   width: 5rem;
+   box-shadow: 2px -2px 0 inset var(--bg1);
+   --cloudX: -7rem;
+   --cloudY: -5rem; 
+   
+   @supports ((--a: 0)) {
+      animation: cloudMove $cloudSpeed alternate infinite linear;
+   }
+   
+   &,
+   &::after,
+   &::before {
+      content: '';
+      position: absolute;
+      height: 0.5rem;
+      background: rgb(58, 53, 118); // fallback
+      background: var(--bg2);
+      border-radius: var(--height);
+   }
+
+   &::before {
+      top: -0.4rem;
+      left: 2rem;
+      width: 4rem;
+   }
+
+   &::after {
+      width: 2rem;
+      top: -0.8rem;
+      left: 2.5rem;
+   }
+   
+   &.b {
+      animation-name: cloudMoveInvert;
+      transform: translate(5rem, -9rem);
+      width: 5rem;
+      --cloudX: 5rem;
+      --cloudY: -9rem;
+      
+      &::before {
+         left: -1rem;
+         width: 4rem;
+      }
+      
+      &::after {
+         width: 0rem;
+      }
+   }
+   
+   &.c {
+      transform: translate(-2rem, -13rem);
+      width: 8rem;
+      --cloudX: -2rem;
+      --cloudY: -13rem;
+      
+      &::before {
+         left: 3rem;
+         width: 4rem;
+      }
+      
+      &::after {
+         top: -1.2rem;
+         left: 4rem;
+         width: 1.5rem;
+      }
+   }
+}
+
+@keyframes cloudMove {
+   from { transform: translate(var(--cloudX), var(--cloudY)); }
+   to { transform: translate(calc(var(--cloudX) + 5rem), var(--cloudY)); }
+}
+
+@keyframes cloudMoveInvert {
+   from { transform: translate(var(--cloudX), var(--cloudY)); }
+   to { transform: translate(calc(var(--cloudX) - 7rem), var(--cloudY)); }
+}
+
+.snow {
+   position: fixed;
+   top: 0; left: 0;
+   transform: rotate(-10deg) translate(-10vw);
+   display: none;
+
+   .radio[value="letItSnow"]:checked ~ & {
+      display: block;
+      
+      @media (max-width: 38rem) {
+         //display: none;
+      }
+   }
+}
+
+.flake {
+   position: fixed;
+   top: 0;
+   left: 0;
+   background-color: white;
+   width: 2px;
+   height: 2px;
+   border-radius: 50%;
+   opacity: 0.7;
+   animation: fall $snowSpeed+s infinite linear;
+   
+   transform: scale(3);
+   transform-origin: 0 0;
+   
+   &:nth-child(even) {
+      width: 3px;
+      height: 3px;
+      opacity: 0.9;
+   }
+
+   @for $i from 1 through 50 {
+      &:nth-child(#{$i}) {
+         left: random(100) + -10 * 1vw;
+         top: 0;
+         animation-delay: (random($snowSpeed))*-1s;
+         animation-duration: (random(6) + $snowSpeed)*1s;
+      }
+   }
+   
+   .snow.front & {
+      width: 4px;
+      height: 4px;
+      box-shadow: 0 0 2px 2px white;
+
+      @for $i from 1 through 15 {
+         &:nth-child(#{$i}) {
+            left: random(100) + -10 * 1vw;
+            top: 0;
+            animation-delay: (random($snowSpeed))*-1s;
+            animation-duration: (random(7) + $snowSpeed)*0.5s;
+         }
+      }
+   }
+}
+
+@keyframes fall {
+   from {
+      transform: scale(3) translate3d(0, 0, 0);
+   }
+   to {
+      transform: scale(3) translate3d(0, 110vh, 0);
+   }
+}
+
+.floor,
+.tree {
+   position: absolute;
+   top: 55%;
+   left: 50%;
+}
+
+.floor {
+   background-color: var(--bg2);
+   width: 20rem;
+   height: 4rem;
+   border-radius: 50%;
+   transform: translate(-50%, 5rem);
+   box-shadow: -2px 2px 0 var(--bg1);
+}
+
+.tree {
+   transform: translate(-50%, -6rem) scale(1.2);
+   text-align: center;
+   width: 15rem;
+
+   // Speed
+   .radio[value="slow"]:checked ~ & {
+      .toggle {
+         animation: slow var(--speed) alternate infinite ease-in-out;
+         animation-delay: -1s;
+         
+         &::after {
+            animation: slowBtn var(--speed) alternate infinite ease-in-out;
+            animation-delay: -1s;
+         }
+      }
+   }
+   
+   .radio[value="steady"]:checked ~ & {
+      .toggle {
+         background-color: var(--light);
+         
+         &:after {
+            background-color: rgba(255,255,255, 0.5);
+            transform: translateX(calc(var(--width) - var(--height)));
+         }
+      }
+   }
+   
+   .radio[value="half"]:checked ~ & {
+      .toggle {
+         animation: slow var(--speed) alternate infinite ease-in-out;
+         
+         &::after {
+            animation: slowBtn var(--speed) alternate infinite ease-in-out;
+         }
+         
+         &.secondary {
+            animation-delay: var(--speedInvert);
+            
+            &::after {
+               animation-delay: var(--speedInvert);
+            }
+         }
+      }
+   }
+   
+   .radio[value="frenetic"]:checked ~ & {
+      .toggle {
+         animation: frenetic 2s alternate infinite ease-in-out;
+         
+         &::after {
+            animation: freneticBtn 2s alternate infinite ease-in-out;
+         }
+         
+         &.secondary {
+            animation-delay: -1s;
+            
+            &::after {
+               animation-delay: -1s;
+            }
+         }
+      }
+   }
+}
+
+.branch:hover {
+  //animation: shake 0.82s cubic-bezier(.36,.07,.19,.97);
+   
+   &:nth-child(odd) {
+      //animation: shakeInvert 0.82s cubic-bezier(.36,.07,.19,.97);
+   }
+}
+
+.toggle {
+   display: inline-block;
+   position: relative;
+   height: var(--height);
+   width: var(--width);
+   border-radius: 30px;
+   margin: 0.1rem;
+   box-shadow: -2px 2px 0 var(--bg1);
+   
+   &.one { --width: 1rem; }
+   &.two { --width: 2.2rem; }
+   &.three { --width: 3.4rem; }
+   &.four { --width: 4.6rem; }
+   
+   &.secondary {
+      --light: var(--light-secondary);
+   }
+   
+   &.rotate {
+      transform: scale(-1);
+      box-shadow: 2px -2px 0 var(--bg1);
+   }
+
+   &::after {
+      content: '';
+      width: var(--height);
+      height: var(--height);
+      position: absolute;
+      top: 0;
+      left: 0;
+      border: 2px solid;
+      border-radius: 50px;
+      background: rgba(white, 0.7);
+      color: var(--light);
+   }
+}
+
+
+// Lights Pattern
+@keyframes slow {
+   0%, 25% {
+      background-color: rgba(0,0,0, 0.5);
+   }
+   75%, 100% {
+      background-color: #e45244; // fallback
+      background-color: var(--light);
+   }
+}
+
+@keyframes slowBtn {
+   0%, 25% {
+      background-color: rgba(0,0,0, 0.5);
+      opacity: 0.5;
+      transform: translate3d(0, 0, 0);
+   }
+   75%, 100% {
+      opacity: 1;
+      background-color: rgb(252,136,113);
+      background-color: rgba(255,255,255, 0.5);
+      transform: translate3d(calc(var(--width) - var(--height)), 0, 0);
+   }
+}
+
+@keyframes frenetic {
+   0%, 15%, 65%, 90% {
+      background-color: rgba(0,0,0, 0.5);
+   }
+   1%, 20%, 75%, 100% {
+      background-color: var(--light);
+   }
+}
+
+@keyframes freneticBtn {
+   0%, 15%, 65%, 90% {
+      background-color: rgba(0,0,0, 0.5);
+      opacity: 0.5;
+      transform: translate3d(0, 0, 0);
+   }
+   1%, 20%, 75%, 100% {
+      opacity: 1;
+      background-color: rgba(255,255,255, 0.5);
+      transform: translate3d(calc(var(--width) - var(--height)), 0, 0);
+   }
+}
+
+
+// Disabled for now...
+@keyframes shake {
+  10%, 90% { transform: translate3d(-0.1rem, 0, 0); }
+  20%, 80% { transform: translate3d(0.2rem, 0, 0); }
+  30%, 50%, 70% { transform: translate3d(-0.4rem, 0, 0); }
+  40%, 60% { transform: translate3d(0.4rem, 0, 0); }
+}
+
+@keyframes shakeInvert {
+  10%, 90% { transform: translate3d(0.1rem, 0, 0); }
+  20%, 80% { transform: translate3d(-0.2rem, 0, 0); }
+  30%, 50%, 70% { transform: translate3d(0.4rem, 0, 0); }
+  40%, 60% { transform: translate3d(-0.4rem, 0, 0); }
+}
+
+
+// SETTINGS PANEL
+.settings {
+   position: fixed;
+   left: 50%;
+   width: 24rem;
+   max-width: 100vw;
+   background: var(--moon);
+   border-radius: var(--height) var(--height) 0 0;
+   bottom: 0;
+   flex-wrap: wrap;
+   z-index: 1;
+   font-size: 0.9rem;
+   padding: 1rem;
+   transform: translate3d(-50%, calc(100% - 2.75rem), 0);
+   transition: transform 250ms;
+   
+   display: none;
+
+   @supports ( (--a: 0)) {
+       display: flex;
+   }
+   
+   &:hover,
+   &:focus {
+      transform: translate3d(-50%, 0, 0);
+   }
+   
+   @each $val in $patterns {
+      .radio[value="#{$val}"]:hover ~ & .label[for="#{$val}"],
+      .radio[value="#{$val}"]:focus ~ & .label[for="#{$val}"] {
+         opacity: 1;
+      }
+      
+      .radio[value="#{$val}"]:checked ~ & .label[for="#{$val}"] {
+         opacity: 1;
+         border-color: var(--light-secondary);
+      }
+   }
+
+   @each $val in $allColors {
+      .radio[value="#{$val}"]:hover ~ & .label[for="#{$val}"],
+      .radio[value="#{$val}"]:focus ~ & .label[for="#{$val}"] {
+         opacity: 1;
+      }
+      
+      .radio[value="#{$val}"]:checked ~ & .label[for="#{$val}"] {
+         opacity: 1;
+         
+         &::before { transform: scale(1.3); }
+      }
+   }
+   
+   .radio[value="letItSnow"]:focus ~ & .label[for="letItSnow"],
+   .radio[value="letItSnow"]:hover ~ & .label[for="letItSnow"]{
+      &::after {
+         opacity: 0.5;
+      }
+   }
+   
+   .radio[value="letItSnow"]:checked ~ & .label[for="letItSnow"] {
+      &::after {
+         opacity: 1;
+      }
+   }
+}
+
+.section {
+   display: flex;
+   flex-direction: column;
+   align-items: flex-start;
+   width: 35%;
+   
+   &.sky {
+      width: 30%;
+   }
+}
+
+.title {
+   text-transform: uppercase;
+   font-size: 0.8em;
+   line-height: 1.2;
+   letter-spacing: 0.05rem;
+   width: 100%;
+   text-decoration: underine;
+   margin-top: 1.5rem;
+   
+   &.h1 {
+      margin-top: 0;
+      margin-right: 0;
+      text-align: center;
+   }
+}
+
+.label {
+   display: block;
+   padding: 0.4rem 0.4rem;
+   margin: 0.5rem 0.2rem 0;
+   bottom: 0;
+   z-index: 2;
+   opacity: 0.5;
+   cursor: pointer;
+   border: 1px solid transparent;
+   border-radius: var(--height);
+   transition: transform 250ms;
+   
+   &.color {
+      display: flex;
+      padding: 0.35rem 0;
+      
+      &::before {
+         content: '';
+         display: inline-block;
+         width: var(--height);
+         height: var(--height);
+         margin-right: 0.5rem;
+         border-radius: var(--height);
+         border: 0px solid transparent;
+      }
+   
+      @each $val in $colors {
+         &[for="#{$val}"]::before {
+            background-image: linear-gradient(
+               to right,
+               var(--light-#{$val}) 50%,
+               var(--light-#{$val}-secondary) 50%
+            );
+         }
+      }
+   
+      @each $val in $bgs {
+         &[for="#{$val}"]::before {
+            background-image: linear-gradient(
+               to right,
+               var(--bg1-#{$val}) 50%,
+               var(--bg2-#{$val}) 50%
+            );
+         }
+      }
+   }
+
+   &.letItSnow {
+      position: relative;
+      opacity: 1;
+
+      &::before,
+      &::after {
+         content: '';
+         display: inline-block;
+         border-radius: 0.2rem;
+      }
+      &::before {
+         width: 1rem;
+         height: 1rem;
+         border: 2px solid var(--bg1);
+         transform: translateY(0.2rem);
+         margin-right: 0.4rem;
+      }
+      
+      &::after {
+         opacity: 0;
+         content: '';
+         display: inline-block;
+         position: absolute;
+         left: 0.65rem;
+         top: 0.85rem;
+         width: 0.5rem;
+         height: 0.5rem;
+         background-color: var(--bg2);
+      }
+   }
+}

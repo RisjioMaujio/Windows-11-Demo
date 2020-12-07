@@ -1,0 +1,116 @@
+:root {
+    --colorOne: rgba(128,63,32,1);
+    --colorTwo: rgba(32,64,128,1);
+    --colorThree: rgba(32,128,32,1);
+    --colorFour: rgba(64,128,128,1);
+    --colorFive: rgba(128,32,128,1);
+}
+
+html {
+    mix-blend-mode: color-dodge;
+      background-image: repeating-linear-gradient(90deg,
+        var(--colorFive),
+        var(--colorFour) 25vw,
+        var(--colorFive) 50vw);
+    -webkit-animation: oneFX 3s infinite ease-in-out alternate;
+            animation: oneFX 3s infinite ease-in-out alternate;
+}
+
+@-webkit-keyframes oneFX {
+    to {
+      background-position: -100vw;
+    }
+}
+
+@keyframes oneFX {
+    to {
+      background-position: -100vw;
+    }
+}
+
+body::before {
+    content: '';
+    mix-blend-mode: color-dodge;
+    position: fixed;
+    top: -100vw;
+    left: -100vw;
+    right: -100vw;
+    bottom: -100vw;
+    background-image: repeating-linear-gradient(90deg,
+        var(--colorFive),
+        var(--colorThree) 200px,
+        var(--colorFive) 400px);
+    -webkit-animation: twoFX 8s infinite linear;
+            animation: twoFX 8s infinite linear;
+}
+
+@-webkit-keyframes twoFX {
+    to {
+        -webkit-transform: rotate(1turn);
+                transform: rotate(1turn);
+    }
+}
+
+@keyframes twoFX {
+    to {
+        -webkit-transform: rotate(1turn);
+                transform: rotate(1turn);
+    }
+}
+
+body::after {
+    content: '';
+    mix-blend-mode: color-dodge;
+    position: fixed;
+    top: -100vw;
+    left: -100vw;
+    right: -100vw;
+    bottom: -100vw;
+    background-image: radial-gradient(circle at center, var(--colorOne), var(--colorTwo), var(--colorOne), var(--colorTwo), var(--colorOne), var(--colorTwo), var(--colorOne), var(--colorTwo), var(--colorOne), var(--colorTwo), var(--colorOne), var(--colorTwo), var(--colorOne), var(--colorTwo), var(--colorOne), var(--colorTwo));
+    -webkit-animation: threeFX 6.5s infinite ease-in-out;
+            animation: threeFX 6.5s infinite ease-in-out;
+}
+
+@-webkit-keyframes threeFX {
+    0%, 100% {
+        -webkit-transform: translate(-15%, -15%);
+                transform: translate(-15%, -15%);
+    }
+
+    25% {
+        -webkit-transform: translate(-15%, 15%);
+                transform: translate(-15%, 15%);
+    }
+  
+    50% {
+        -webkit-transform: translate(15%, 15%);
+                transform: translate(15%, 15%);
+    }
+  
+    75% {
+      -webkit-transform: translate(15%, -15%);
+              transform: translate(15%, -15%);
+    }
+}
+
+@keyframes threeFX {
+    0%, 100% {
+        -webkit-transform: translate(-15%, -15%);
+                transform: translate(-15%, -15%);
+    }
+
+    25% {
+        -webkit-transform: translate(-15%, 15%);
+                transform: translate(-15%, 15%);
+    }
+  
+    50% {
+        -webkit-transform: translate(15%, 15%);
+                transform: translate(15%, 15%);
+    }
+  
+    75% {
+      -webkit-transform: translate(15%, -15%);
+              transform: translate(15%, -15%);
+    }
+}

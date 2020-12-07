@@ -1,0 +1,136 @@
+﻿<!--A Design by W3layouts
+Author: W3layout
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<!DOCTYPE HTML>
+<html lang="zxx">
+
+<head>
+    <title>Calendar widget Responsive Widget Template :: w3layouts</title>
+    <!-- Meta-Tags -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <meta name="keywords" content="Calendar widget a Responsive Web Template, Bootstrap Web Templates, Flat Web Templates, Android Compatible Web Template, Smartphone Compatible Web Template, Free Webdesigns for Nokia, Samsung, LG, Sony Ericsson, Motorola Web Design">
+    <script>
+        addEventListener("load", function () {
+            setTimeout(hideURLbar, 0);
+        }, false);
+
+        function hideURLbar() {
+            window.scrollTo(0, 1);
+        }
+    </script>
+    <!-- //Meta-Tags -->
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <!-- must needed css -->
+    <link rel="stylesheet" type="text/css" href="css/pignose.calendar.min.css" />
+    <!-- online fonts -->
+    <link href="//fonts.googleapis.com/css?family=Josefin+Sans:100,100i,300,300i,400,400i,600,600i,700,700i" rel="stylesheet">
+</head>
+
+<body>
+    <header class="agile">
+        <h1 class="text-center">Calendar widget</h1>
+    </header>
+    <div id="wrapper">
+        <div id="theme-dark">
+            <div class="calendar-dark"></div>
+            <div class="box"></div>
+        </div>
+    </div>
+    <div class="copy-wthree">
+        <p>© 2018 Calendar widget. All Rights Reserved | Design by
+            SKSM
+        </p>
+    </div>
+    <!--//copyright-->
+    <!-- js -->
+    <script src="js/jquery-2.2.3.min.js"></script>
+    <!-- //js -->
+    <!-- calendar js -->
+    <script src="js/pignose.calendar.full.min.js"></script>
+    <script>
+        //<![CDATA[
+        $(function () {
+            $('#wrapper .version strong').text('v' + $.fn.pignoseCalendar.version);
+
+            function onSelectHandler(date, context) {
+                /**
+                 * @date is an array which be included dates(clicked date at first index)
+                 * @context is an object which stored calendar interal data.
+                 * @context.calendar is a root element reference.
+                 * @context.calendar is a calendar element reference.
+                 * @context.storage.activeDates is all toggled data, If you use toggle type calendar.
+                 * @context.storage.events is all events associated to this date
+                 */
+
+                var $element = context.element;
+                var $calendar = context.calendar;
+                var $box = $element.siblings('.box').show();
+                var text = 'You selected date ';
+
+                if (date[0] !== null) {
+                    text += date[0].format('DD-MM-YYYY');
+                }
+
+                if (date[0] !== null && date[1] !== null) {
+                    text += ' ~ ';
+                } else if (date[0] === null && date[1] == null) {
+                    text += 'nothing';
+                }
+
+                if (date[1] !== null) {
+                    text += date[1].format('DD-MM-YYYY');
+                }
+
+                $box.text(text);
+            }
+
+            function onApplyHandler(date, context) {
+                /**
+                 * @date is an array which be included dates(clicked date at first index)
+                 * @context is an object which stored calendar interal data.
+                 * @context.calendar is a root element reference.
+                 * @context.calendar is a calendar element reference.
+                 * @context.storage.activeDates is all toggled data, If you use toggle type calendar.
+                 * @context.storage.events is all events associated to this date
+                 */
+
+                var $element = context.element;
+                var $calendar = context.calendar;
+                var $box = $element.siblings('.box').show();
+                var text = 'You applied date ';
+
+                if (date[0] !== null) {
+                    text += date[0].format('DD-MM-YYYY');
+                }
+
+                if (date[0] !== null && date[1] !== null) {
+                    text += ' ~ ';
+                } else if (date[0] === null && date[1] == null) {
+                    text += 'nothing';
+                }
+
+                if (date[1] !== null) {
+                    text += date[1].format('DD-MM-YYYY');
+                }
+
+                $box.text(text);
+            }
+
+            // Color theme type Calendar
+            $('.calendar-dark').pignoseCalendar({
+                theme: 'dark', // light, dark, blue
+                select: onSelectHandler
+            });
+
+
+        });
+        //]]>
+    </script>
+    <!-- //calendar js -->
+</body>
+
+</html>

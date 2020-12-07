@@ -1,0 +1,122 @@
+.container {
+  background-color: #eee;
+  width:730px;
+  padding: 1px 0px 10px 10px;
+  border-radius: 10px;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+ul.keyboard {
+  list-style-type: none;
+  font-family: verdana;
+  background-color: #eee;
+  border-radius: 5px;
+  padding: 0;
+  width: 720px;
+  height: 279px;
+}
+
+.keyboard li {
+  cursor: pointer;
+  display: inline;
+  float: left;
+  height: 18%;
+  margin: auto;
+  line-height: 50px;
+  padding: 0;
+  margin: 0.3% 0.6% 0.6% 0.2%;
+  background-color: #ddd;
+  color: black;
+  vertical-align: middle;
+  text-align: center;
+  border-radius: 4px;
+  font-size: 1vw;
+  -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.char {
+    width: 5.75%;
+    -webkit-transition: background-color 100ms;
+}
+
+.tab {
+  width: 14%;
+}
+
+.at {
+  width: 7.2%;
+}
+
+.last {
+  margin-right: 0%;
+}
+
+.backspace {
+  width: 14%;
+}
+
+.capslock {
+  width: 12%
+}
+
+.capslock.on {
+  background-color: #aaa;
+}
+
+.return {
+  width: 14%;
+}
+
+.shift {
+  width: 7.2%;
+}
+
+.last {
+  margin-right: 0;
+}
+
+.space {
+  width: 99%;
+}
+
+.keyboard .touch {
+  background-color: #888;
+}
+
+/****************************/
+
+.form {
+  position: absolute;
+  top: 10px;
+  left: 760px; 
+}
+
+textarea {
+  width: 300px;
+  height: 200px;
+}
+
+input:focus,textarea:focus {
+   outline: none;
+}
+
+input,textarea {
+  margin: 2px;
+  padding: 5px;
+  font-family: Helvetica;
+  font-size: 16px;
+}
+
+.focus {
+  border: solid 2px #333;
+}

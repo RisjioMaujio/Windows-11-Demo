@@ -1,0 +1,458 @@
+body { background-color: #ffdc30; font-family: 'Concert One', cursive; margin: 0; overflow: hidden; padding: 0; }
+
+/*/////////////////// rules */
+$black:           #13242C;
+$white:           #fff;
+$brown:           #93292C;
+$green:           #529b47;
+$green-dark:      #3d7734;
+$green-darkest:   #2a5424;
+$yellow:          #ffdc30;
+$gray:            #707070;
+$gray-light:      #999;
+$gray-lighest:    #bababa;
+$gray-dark:       #4c4c4c;
+$red:             #b23c3c;
+
+@mixin bg ($color, $opacity) {
+  background-color: rgba($color, $opacity);
+}
+@mixin position {
+  position: absolute;
+}
+@mixin top50 {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+@mixin left50 {
+  left: 50%;
+  position: absolute;
+  transform: translateX(-50%);
+}
+@mixin centered {
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+/*___________________________________________________*/
+/*//////////////////////////////////////////// scene */
+// .container {
+//   @include bg($black, 0.1);  
+//   .godzilla, .bigrobot {
+//     @include bg(red, 0.2);
+//     .shape {
+//       @include bg(blue, 0.1);      
+//     }
+//   }
+//   .skyscraper-box {
+//     @include bg($red, 0.1);
+//   }  
+// }
+.text {
+  @include left50;
+  color: $white;
+  font-size: 3em;
+  margin: 0;
+  opacity: 0.3;
+  text-align: center;
+  top: 50px;
+  width: 80%;
+}
+.container {
+  @include centered;
+  height: 350px;
+  width: 750px;
+  transform: translate(-50%, -50%) scale(0.6);
+  .bg {
+    @include centered;
+    @include bg($yellow, 0.2);
+    border-radius: 50%;
+    box-shadow: 0px 0px 0px 90px rgba($brown, 0.1);
+    height: 400px;
+    opacity: 0.5;
+    overflow: hidden;
+    width: 400px;
+  }
+}
+.godzilla {
+  @include top50;
+  height: 350px;
+  right: 0;
+  width: 200px;
+  .shadow {
+    @include position;
+    @include bg($black, 0.2);
+    border-radius: 20px;
+    bottom: -5px;
+    right: -10px;
+    height: 10px;
+    width: 290px;
+  }
+  .back {
+    @include position;
+    @include bg($green, 1);
+    border-radius: 50%;
+    box-shadow:   
+      36px 18px 0 $green,
+      65px 50px 0 $green,
+      83px 90px 0 $green,
+      87px 135px 0 $green;
+    height: 30px;
+    right: 80px;
+    top: 120px;
+    width: 30px;
+  }
+  .shape {
+    @include position;
+    bottom: 0;
+    height: 300px;
+    overflow: hidden;
+    width: 200px;
+    &:after {
+      @include position;
+      @include bg($green, 1);
+      border-radius: 50%;
+      content:"";
+      height: 250px;
+      left: -30%;
+      top: 80px;
+      width: 250px;
+    }
+    &:before {
+      @include position;
+      @include bg($green-darkest, 1);
+      border-radius: 50px 50px 0 0;
+      bottom: 0;
+      content:"";
+      height: 40px;
+      right: 0;
+      width: 100px;
+    }
+  }
+  .leg {
+    @include position;
+    @include bg($green-dark, 1);
+    border-radius: 50px 50px 0 0;
+    bottom: 0;
+    height: 110px;
+    left: -30px;
+    width: 100px;
+    &:after, &:before {
+      @include position;
+      @include bg($green-darkest, 1);
+      border-radius: 50px 50px 0 0;
+      bottom: 0;
+      content:"";
+      height: 20px;
+      width: 40px;
+    }
+    &:after   {left: -10px;}
+    &:before  {left: 15px;}
+  }
+  .arm {
+    @include position;
+    @include bg($green-dark, 1);
+    border-radius: 80px;
+    height: 80px;
+    right: 110px;
+    top: 170px;
+    width: 150px;
+    &:after {
+      @include position;
+      @include bg($green-dark, 1);
+      border-radius: 50%;
+      bottom: 0;
+      content:"";
+      height: 85px;
+      left: -5px;
+      width: 85px;
+    }
+    &:before {
+      @include position;
+      @include bg($green-dark, 1);
+      border-radius: 30px;
+      content:"";
+      height: 30px;
+      left: -15px;
+      top: -5px;
+      width: 60px;
+    }
+  }
+  .head {
+    @include position;
+    @include bg($green, 1);
+    border-radius: 50%;
+    height: 120px;
+    left: -40px;
+    top: 60px;
+    width: 120px;
+    &:after {
+      @include top50;
+      @include bg($yellow, 1);
+      border-radius: 50%;
+      content:"";
+      height: 20px;
+      left: 20px;
+      width: 20px;
+    }
+  }
+}
+.bigrobot {
+  @include top50;
+  height: 350px;
+  left: 0;
+  width: 200px;
+  .shadow {
+    @include position;
+    @include bg($black, 0.2);
+    border-radius: 20px;
+    bottom: -5px;
+    left: 10px;
+    height: 10px;
+    width: 270px;
+  }
+  .back {
+    @include position;
+    @include bg($gray-dark, 1);
+    border-radius: 10px 50px 0 50px;
+    height: 180px;
+    left: 60px;
+    top: 100px;
+    transform: rotate(-20deg);
+    width: 80px;
+  }
+  #back2 {
+    @include bg($red, 1);
+    left: 70px;
+    top: 70px;
+  }
+  .shape {
+    @include position;
+    bottom: 0;
+    height: 300px;
+    overflow: hidden;
+    width: 200px;
+    &:after {
+      @include position;
+      @include bg($gray, 1);
+      border-radius: 50%;
+      content:"";
+      height: 250px;
+      right: -30%;
+      top: 80px;
+      width: 250px;
+    }
+  }
+  .leg {
+    @include position;
+    @include bg($gray-dark, 1);
+    border-radius: 50px 50px 0 0;
+    bottom: 0;
+    height: 110px;
+    right: -30px;
+    width: 100px;
+    &:after, &:before {
+      @include position;
+      @include bg($red, 1);
+      border-radius: 0 50px 0 0;
+      bottom: 0;
+      content:"";
+      height: 20px;
+      right: -10px;
+      width: 110px;
+    }
+  }
+  .arm {
+    @include position;
+    @include bg($gray-dark, 1);
+    border-radius: 80px;
+    height: 80px;
+    left: 110px;
+    top: 170px;
+    width: 150px;
+    &:after {
+      @include position;
+      @include bg($gray-dark, 1);
+      border-radius: 50%;
+      bottom: 0;
+      content:"";
+      height: 85px;
+      right: -5px;
+      width: 85px;
+    }
+    &:before {
+      @include position;
+      @include bg($gray-dark, 1);
+      border-radius: 30px;
+      content:"";
+      height: 30px;
+      right: -15px;
+      top: -5px;
+      width: 60px;
+    }
+  }
+  .head {
+    @include position;
+    @include bg($gray, 1);
+    border-radius: 50%;
+    height: 120px;
+    right: -40px;
+    overflow: hidden;
+    top: 60px;
+    width: 120px;
+    &:after {
+      @include top50;
+      @include bg($yellow, 1);
+      border-radius: 50px;
+      content:"";
+      height: 20px;
+      right: -20px;
+      width: 70px;
+    }
+  }
+}
+.skyscraper-shadow {
+  @include position;
+  @include bg($black, 0.2);
+  border-radius: 20px;
+  bottom: -5px;
+  height: 10px;
+  left: 300px;
+  width: 150px;
+}
+.skyscraper-box {
+  @include left50;
+  bottom: 0;
+  height: 300px;
+  overflow: hidden;
+  width: 250px;
+  .skyscraper {
+    @include position;
+    @include bg($gray-light, 1);
+    border-radius: 5px 5px 0 0;
+    bottom: 0;
+    height: 250px;
+    left: calc(50% - 60px);
+    top: 80px;
+    transform: rotate(11deg);
+    transform-origin: 60px 250px;
+    width: 120px;
+    &:after {
+      @include left50;
+      @include bg($gray, 1);
+      border-radius: 5px 5px 0 0;
+      content:"";
+      height: 50px;
+      top: -50px;
+      width: 90px;
+    }
+    &:before {
+      @include left50;
+      @include bg($gray-light, 1);
+      border-radius: 50% 50% 0 0;
+      content:"";
+      height: 50px;
+      top: -75px;
+      width: 50px;
+    }
+    .window {
+      @include position;
+      @include bg($gray-lighest, 1);
+      border-radius: 2px;
+      box-shadow: 
+        20px 0 $gray-lighest,
+        40px 0 $gray-lighest,
+        60px 0 $gray-lighest,
+        80px 0 $gray-lighest,
+        
+        0 30px $gray-lighest,
+        20px 30px $gray-lighest,
+        40px 30px $gray-lighest,
+        60px 30px $gray-lighest,
+        80px 30px $gray-lighest,
+        
+        0 60px $gray-lighest,
+        20px 60px $gray-lighest,
+        40px 60px $gray-lighest,
+        60px 60px $gray-lighest,
+        80px 60px $gray-lighest,
+        
+        0 90px $gray-lighest,
+        20px 90px $gray-lighest,
+        40px 90px $gray-lighest,
+        60px 90px $gray-lighest,
+        80px 90px $gray-lighest,
+        
+        0 120px $gray-lighest,
+        20px 120px $gray-lighest,
+        40px 120px $gray-lighest,
+        60px 120px $gray-lighest,
+        80px 120px $gray-lighest,
+        
+        0 150px $gray-lighest,
+        20px 150px $gray-lighest,
+        40px 150px $gray-lighest,
+        60px 150px $gray-lighest,
+        80px 150px $gray-lighest;
+      height: 20px;
+      left: 15px;
+      top: 15px;
+      width: 10px;
+    }
+  }
+}
+/*___________________________________________________*/
+/*//////////////////////////////////////// animation */
+.godzilla {
+  .arm {
+    animation: arm-anima infinite 2s ease-in-out;
+  }
+  .head {
+    animation: head-anima infinite 2s ease-in-out;
+  }
+}
+.bigrobot {
+  .arm {
+    animation: arm-anima infinite 2s ease-in-out;
+    animation-delay: 1s;
+  }
+  .head {
+    animation: head-anima infinite 2s ease-in-out;
+    animation-delay: 1s;
+  }
+}
+@keyframes arm-anima {
+  0%    {width: 150px}
+  47%   {width: 225px}
+  70%   {width: 150px}
+}
+@keyframes head-anima {
+  0%    {top: 60px}
+  47%   {top: 80px}
+  70%   {top: 60px}
+}
+
+.skyscraper {
+  animation: skyscraper-anima infinite 2s ease-in-out;
+  @keyframes skyscraper-anima {
+    0%    {transform: rotate(11deg)}
+    50%   {transform: rotate(-11deg)}
+  }
+}
+/*/////////////////////// credit ////*/
+#link {
+  bottom: 20px;
+  color: $black;
+  opacity: 0.3;
+  display: flex;
+  align-items: center;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+#link p {margin: 0; margin-left: 5px;}
+#link:hover {opacity: 1;}
+
+

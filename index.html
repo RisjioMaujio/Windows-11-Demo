@@ -1,0 +1,1047 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head><style>
+    a:link {color: #00787d7}
+    a:visited {color: #00787d7}
+    a:active {color: #00787d7}
+    a:hover {color: white}
+  </style>
+  <meta charset="UTF-8">
+  <title>Windows 10 - Using CSS & JS Only</title>
+  
+  
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css'>
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
+
+      <link rel="stylesheet" href="css/style.css">
+
+
+  
+</head>
+
+<body alink="white" link="white" vlink="white">
+
+  <div id="window" class="window">
+    <div class="icon-computer text-center" id="icon-computer" ondblclick="opencom()">
+        <img src="http://res.cloudinary.com/dr5ei3rt1/image/upload/v1500505053/thumb_14339670430This_PC_fo5lbo.png" class="img-responsive">
+        <p>This PC</p>
+    </div><div class="icon-computer text-center" >
+       <a href="Videos/" target="_blank"> <img src="assets/videos.png" class="img-responsive">
+        <p>Videos</p></a>
+    </div><div class="icon-computer text-center" >
+      <a href="games/games.html" target="_blank">  <img src="assets/game.jpg" class="img-responsive">
+        <p>Games</p></a>
+    </div><div class="icon-computer text-center" >
+      <a href="Project/S.K.S.M. Project/index.html" target="_blank">  <img src="assets/game2.jpg" class="img-responsive">
+        <p>Windows Project</p></a>
+    </div><div class="icon-computer text-center" >
+       <a href="webrun:notepad.exe"> <img src="assets/notepad.png" class="img-responsive">
+        <p>Notepad</p></a>
+    </div><div class="icon-computer text-center" >
+        <a href="Music/" target="_blank"><img src="assets/music folder.png" class="img-responsive">
+        <p>Music</p></a>
+    </div>
+    <section class="option-box">
+        <div class="color-box">
+            <h4>All about Windows 10 Design</h4>
+            <!--<video class="center-block" width="360" height="" controls>
+                        <source src="img/myExplain_2.mp4" type="video/mp4">
+                        <source src="img/myExplain_2.ogg" type="video/ogg">
+                        Your browser does not support the video tag.
+                </video>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                
+            <div style="position:relative;height:0;padding-bottom:56.25%;width: 400px;"><iframe src="assets/Introducing Windows 11 (Concept).mp4" style="position:absolute;width:100%;height:100%;left:0" width="640" height="360" frameborder="0" allowfullscreen autorun="false"></iframe></div>
+            <a class="btn btn-primary center-block text-center" onclick="openabout()">About Windows 10</a>
+        </div>
+        <i class="fa fa-gear fa-3x gear-check"></i>
+    </section>
+    <div class="overlay-computer" id="overlay-computer">
+        <div class="fluid-container">
+            <div class="first-row-win" id="first-row-win">
+                <div class="left">
+                    <i class="fa fa-hdd-o"></i>
+                    <i class="fa fa-file-o"></i>
+                    <i class="fa fa-folder"></i>
+                    <span>Front End</span>
+                </div>
+                <div class="right">
+                    <i class="fa fa-window-minimize" onclick="closeopencom()"></i>
+                    <i class="fa fa-window-restore" onclick="returncom()" id="returncam" style="display:none;"></i>
+                    <i class="fa fa-window-maximize" onclick="upercom()" id="upercam"></i>
+                    <i class="fa fa-times" onclick="closecom()"></i>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+            <div class="second-row-win">
+                <div>
+                    <!-- Nav tabs -->
+                    <ul class="nav nav-tabs" role="tablist">
+                        <li role="presentation" class="active"><a class="home-a" href="#home" aria-controls="home" role="tab" data-toggle="tab">File</a></li>
+                        <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Home</a></li>
+                        <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Share</a></li>
+                        <li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">View</a></li>
+                    </ul>
+                    <!-- Tab panes -->
+                    <div class="tab-content">
+                        <div role="tabpanel" class="tab-pane active" id="home">
+                            <div class="col-xs-1 text-center">
+                                <i class="fa fa-envelope-open fa-2x"></i>
+                                <p>Mail</p>
+                            </div>
+                            <div class="col-xs-1 text-center">
+                                <i class="fa fa-file-code-o  fa-2x"></i>
+                                <p>Code</p>
+                            </div>
+                            <div class="col-xs-1 text-center">
+                                <i class="fa fa-sticky-note-o fa-2x"></i>
+                                <p>Note</p>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div role="tabpanel" class="tab-pane" id="profile">
+                            <div class="col-xs-1 text-center">
+                                <i class="fa fa-user-circle fa-2x"></i>
+                                <p>User</p>
+                            </div>
+                            <div class="col-xs-1 text-center">
+                                <i class="fa fa-battery-4  fa-2x"></i>
+                                <p>battery</p>
+                            </div>
+                            <div class="col-xs-1 text-center">
+                                <i class="fa fa-book fa-2x"></i>
+                                <p>Book</p>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div role="tabpanel" class="tab-pane" id="messages">
+                            <div class="col-xs-1 text-center">
+                                <i class="fa fa-car fa-2x"></i>
+                                <p>Car</p>
+                            </div>
+                            <div class="col-xs-1 text-center">
+                                <i class="fa fa-camera-retro  fa-2x"></i>
+                                <p>cam</p>
+                            </div>
+                            <div class="col-xs-1 text-center">
+                                <i class="fa fa-building fa-2x"></i>
+                                <p>build</p>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div role="tabpanel" class="tab-pane" id="settings">
+                            <div class="col-xs-1 text-center">
+                                <i class="fa fa-cubes fa-2x"></i>
+                                <p>cubes</p>
+                            </div>
+                            <div class="col-xs-1 text-center">
+                                <i class="fa fa-coffee fa-2x"></i>
+                                <p>coffee</p>
+                            </div>
+                            <div class="col-xs-1 text-center">
+                                <i class="fa fa-film fa-2x"></i>
+                                <p>film</p>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="third-row-win">
+                <div class="col-xs-2">
+                    <i class="fa fa-long-arrow-left"></i>
+                    <i class="fa fa-long-arrow-right"></i>
+                    <i class="fa fa-chevron-down"></i>
+                    <i class="fa fa-arrow-up"></i>
+                </div>
+                <div class="col-xs-7">
+                    <div class="path-input">
+                        <span class="path-icon-input"><a href="webrun:C:\Windows\explorer.exe">
+                        This pc</a></span>
+                        <span class="path-icon-input"><a href="webrun:C:\Windows\explorer.exe">
+                        S.K.S.M. (E:)</a></span>
+                        <span class="path-icon-input"><a href="webrun:C:\Windows\explorer.exe">
+                        Programming</a></span>
+                        <span class="path-icon-input"><a href="webrun:C:\Windows\explorer.exe">
+                        Developers</a></span>
+                    </div>
+                    <i class="fa fa-hdd-o path-icon"></i>
+                    <i class="fa fa-repeat path-icon-1"></i>
+                    <i class="path-icon-2">|</i>
+                </div>
+                <div class="col-xs-3">
+                    <input class="search-input" type="text" placeholder="Search">
+                    <i class="fa fa-search path-icon-1"></i>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+            <div class="fourd-row-win">
+                <div class="col-xs-3" style="border-right: 1px solid #808080;">
+                    <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                        <div class="panel panel-default">
+                            <div class="panel-heading" role="tab" id="headingOne">
+                                <h4 class="panel-title">
+                                    <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                        <span class="fa fa-star">Quick access</span>
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                                <div class="panel-body">
+                                    <p><span class="fa fa-desktop"><a href="webrun:C:\Windows\explorer.exe">Desktop</a></span></p>
+                                    <p><span class="fa fa-download"><a href="webrun:C:\Windows\explorer.exe">Downloads</a></span></p>
+                                    <p><span class="fa fa-file-text"><a href="webrun:C:\Windows\explorer.exe">Documents</a></span></p>
+                                    <p><span class="fa fa-picture-o "><a href="webrun:C:\Windows\explorer.exe">Picture</a></span></p>
+                                    <p><span class="fa fa-folder "><a href="webrun:C:\Windows\explorer.exe">Folder</a></span></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel panel-default">
+                            <div class="panel-heading" role="tab" id="headingTwo">
+                                <h4 class="panel-title">
+                                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                        <span class="fa fa-folder-open">Creative Cloud</span>
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                                <div class="panel-body">
+                                    <p><span class="fa fa-desktop"><a href="webrun:C:\Windows\explorer.exe">Desktop</a></span></p>
+                                    <p><span class="fa fa-download"><a href="webrun:C:\Windows\explorer.exe">Downloads</a></span></p>
+                                    <p><span class="fa fa-file-text"><a href="webrun:C:\Windows\explorer.exe">Documents</a></span></p>
+                                    <p><span class="fa fa-picture-o "><a href="webrun:C:\Windows\explorer.exe">Picture</a></span></p>
+                                    <p><span class="fa fa-folder "><a href="webrun:C:\Windows\explorer.exe">Folder</a></span></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel panel-default">
+                            <div class="panel-heading" role="tab" id="headingThree">
+                                <h4 class="panel-title">
+                                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                        <span class="fa fa-desktop">This PC</span>
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+                                <div class="panel-body">
+                                    <p><span class="fa fa-desktop"><a href="webrun:C:\Windows\explorer.exe">Desktop</a></span></p>
+                                    <p><span class="fa fa-download"><a href="webrun:C:\Windows\explorer.exe">Downloads</a></span></p>
+                                    <p><span class="fa fa-file-text"><a href="webrun:C:\Windows\explorer.exe">Documents</a></span></p>
+                                    <p><span class="fa fa-picture-o "><a href="webrun:C:\Windows\explorer.exe">Picture</a></span></p>
+                                    <p><span class="fa fa-folder "><a href="webrun:C:\Windows\explorer.exe">Folder</a></span></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-9 ">
+                    <div class="row main-folders">
+                        <div class="col-xs-2 folders text-center" ondblclick="openimg()">
+                            <p class="contain"><img src="assets/qwe.jpg" class="img-responsive  center-block" alt=""></p>
+                            <span>Photo</span>
+                        </div>
+                        <div class="col-xs-2 folders text-center" ondblclick="openvid()">
+                            <p class="contain"><img src="assets/b.jpg" class="img-responsive  center-block" alt=""></p>
+                            <span>Video</span>
+                        </div>
+                        <div class="col-xs-2 folders text-center" ondblclick="opennote()">
+                            <p class="contain"><img src="http://res.cloudinary.com/dr5ei3rt1/image/upload/v1500505134/if_sticky-note_299111_px7waa.png" class="img-responsive  center-block" alt=""></p>
+                            <span>Note</span>
+                        </div>
+                        <div class="col-xs-2 folders text-center">
+                            <p class="contain"><img src="http://res.cloudinary.com/dr5ei3rt1/image/upload/v1500502735/if_folder-blue_285658_f5jeko.svg" class="img-responsive  center-block" style="height: 64px;" alt=""></p>
+                            <span>Folder</span>
+                        </div>
+                        <div class="col-xs-2 folders text-center">
+                            <p class="contain"><img src="http://res.cloudinary.com/dr5ei3rt1/image/upload/v1500502735/if_folder-blue_285658_f5jeko.svg" class="img-responsive  center-block" style="height: 64px;" alt=""></p>
+                            <span>Folder</span>
+                        </div>
+                        <div class="col-xs-2 folders text-center">
+                            <p class="contain"><img src="http://res.cloudinary.com/dr5ei3rt1/image/upload/v1500502735/if_folder-blue_285658_f5jeko.svg" class="img-responsive  center-block" style="height: 64px;" alt=""></p>
+                            <span>Folder</span>
+                        </div>
+                        <div class="col-xs-2 folders text-center">
+                            <p class="contain"><img src="http://res.cloudinary.com/dr5ei3rt1/image/upload/v1500502735/if_folder-blue_285658_f5jeko.svg" class="img-responsive  center-block" style="height: 64px;" alt=""></p>
+                            <span>Folder</span>
+                        </div>
+                        <div class="col-xs-2 folders text-center">
+                            <p class="contain"><img src="http://res.cloudinary.com/dr5ei3rt1/image/upload/v1500502735/if_folder-blue_285658_f5jeko.svg" class="img-responsive  center-block" style="height: 64px;" alt=""></p>
+                            <span>Folder</span>
+                        </div>
+                        <div class="col-xs-2 folders text-center">
+                            <p class="contain"><img src="http://res.cloudinary.com/dr5ei3rt1/image/upload/v1500502735/if_folder-blue_285658_f5jeko.svg" class="img-responsive  center-block" style="height: 64px;" alt=""></p>
+                            <span>Folder</span>
+                        </div>
+                        <div class="col-xs-2 folders text-center">
+                            <p class="contain"><img src="http://res.cloudinary.com/dr5ei3rt1/image/upload/v1500502735/if_folder-blue_285658_f5jeko.svg" class="img-responsive  center-block" style="height: 64px;" alt=""></p>
+                            <span>Folder</span>
+                        </div>
+                        <div class="col-xs-2 folders text-center">
+                            <p class="contain"><img src="http://res.cloudinary.com/dr5ei3rt1/image/upload/v1500502735/if_folder-blue_285658_f5jeko.svg" class="img-responsive  center-block" style="height: 64px;" alt=""></p>
+                            <span>Folder</span>
+                        </div>
+                        <div class="col-xs-2 folders text-center">
+                            <p class="contain"><img src="http://res.cloudinary.com/dr5ei3rt1/image/upload/v1500502735/if_folder-blue_285658_f5jeko.svg" class="img-responsive  center-block" style="height: 64px;" alt=""></p>
+                            <span>Folder</span>
+                        </div>
+                        <div class="col-xs-2 folders text-center">
+                            <p class="contain"><img src="http://res.cloudinary.com/dr5ei3rt1/image/upload/v1500502735/if_folder-blue_285658_f5jeko.svg" class="img-responsive  center-block" style="height: 64px;" alt=""></p>
+                            <span>Folder</span>
+                        </div>
+                        <div class="col-xs-2 folders text-center">
+                            <p class="contain"><img src="http://res.cloudinary.com/dr5ei3rt1/image/upload/v1500502735/if_folder-blue_285658_f5jeko.svg" class="img-responsive  center-block" style="height: 64px;" alt=""></p>
+                            <span>Folder</span>
+                        </div>
+                        <div class="col-xs-2 folders text-center">
+                            <p class="contain"><img src="http://res.cloudinary.com/dr5ei3rt1/image/upload/v1500502735/if_folder-blue_285658_f5jeko.svg" class="img-responsive  center-block" style="height: 64px;" alt=""></p>
+                            <span>Folder</span>
+                        </div>
+                        <div class="col-xs-2 folders text-center">
+                            <p class="contain"><img src="http://res.cloudinary.com/dr5ei3rt1/image/upload/v1500502735/if_folder-blue_285658_f5jeko.svg" class="img-responsive  center-block" style="height: 64px;" alt=""></p>
+                            <span>Folder</span>
+                        </div>
+                        <div class="col-xs-2 folders text-center">
+                            <p class="contain"><img src="http://res.cloudinary.com/dr5ei3rt1/image/upload/v1500502735/if_folder-blue_285658_f5jeko.svg" class="img-responsive  center-block" style="height: 64px;" alt=""></p>
+                            <span>Folder</span>
+                        </div>
+                        <div class="col-xs-2 folders text-center">
+                            <p class="contain"><img src="http://res.cloudinary.com/dr5ei3rt1/image/upload/v1500502735/if_folder-blue_285658_f5jeko.svg" class="img-responsive  center-block" style="height: 64px;" alt=""></p>
+                            <span>Folder</span>
+                        </div>
+                        <div class="col-xs-2 folders text-center">
+                            <p class="contain"><img src="http://res.cloudinary.com/dr5ei3rt1/image/upload/v1500502735/if_folder-blue_285658_f5jeko.svg" class="img-responsive  center-block" style="height: 64px;" alt=""></p>
+                            <span>Folder</span>
+                        </div>
+                        <div class="col-xs-2 folders text-center">
+                            <p class="contain"><img src="http://res.cloudinary.com/dr5ei3rt1/image/upload/v1500502735/if_folder-blue_285658_f5jeko.svg" class="img-responsive  center-block" style="height: 64px;" alt=""></p>
+                            <span>Folder</span>
+                        </div>
+                        <div class="col-xs-2 folders text-center">
+                            <p class="contain"><img src="http://res.cloudinary.com/dr5ei3rt1/image/upload/v1500502735/if_folder-blue_285658_f5jeko.svg" class="img-responsive  center-block" style="height: 64px;" alt=""></p>
+                            <span>Folder</span>
+                        </div>
+                        <div class="col-xs-2 folders text-center">
+                            <p class="contain"><img src="http://res.cloudinary.com/dr5ei3rt1/image/upload/v1500502735/if_folder-blue_285658_f5jeko.svg" class="img-responsive  center-block" style="height: 64px;" alt=""></p>
+                            <span>Folder</span>
+                        </div>
+                        <div class="col-xs-2 folders text-center">
+                            <p class="contain"><img src="http://res.cloudinary.com/dr5ei3rt1/image/upload/v1500502735/if_folder-blue_285658_f5jeko.svg" class="img-responsive  center-block" style="height: 64px;" alt=""></p>
+                            <span>Folder</span>
+                        </div>
+                        <div class="col-xs-2 folders text-center">
+                            <p class="contain"><img src="http://res.cloudinary.com/dr5ei3rt1/image/upload/v1500502735/if_folder-blue_285658_f5jeko.svg" class="img-responsive  center-block" style="height: 64px;" alt=""></p>
+                            <span>Folder</span>
+                        </div>
+                        <div class="col-xs-2 folders text-center">
+                            <p class="contain"><img src="http://res.cloudinary.com/dr5ei3rt1/image/upload/v1500502735/if_folder-blue_285658_f5jeko.svg" class="img-responsive  center-block" style="height: 64px;" alt=""></p>
+                            <span>Folder</span>
+                        </div>
+                        <div class="col-xs-2 folders text-center">
+                            <p class="contain"><img src="http://res.cloudinary.com/dr5ei3rt1/image/upload/v1500502735/if_folder-blue_285658_f5jeko.svg" class="img-responsive  center-block" style="height: 64px;" alt=""></p>
+                            <span>Folder</span>
+                        </div>
+                        <div class="col-xs-2 folders text-center">
+                            <p class="contain"><img src="http://res.cloudinary.com/dr5ei3rt1/image/upload/v1500502735/if_folder-blue_285658_f5jeko.svg" class="img-responsive  center-block" style="height: 64px;" alt=""></p>
+                            <span>Folder</span>
+                        </div>
+                        <div class="col-xs-2 folders text-center">
+                            <p class="contain"><img src="http://res.cloudinary.com/dr5ei3rt1/image/upload/v1500502735/if_folder-blue_285658_f5jeko.svg" class="img-responsive  center-block" style="height: 64px;" alt=""></p>
+                            <span>Folder</span>
+                        </div>
+                        <div class="col-xs-2 folders text-center">
+                            <p class="contain"><img src="http://res.cloudinary.com/dr5ei3rt1/image/upload/v1500502735/if_folder-blue_285658_f5jeko.svg" class="img-responsive  center-block" style="height: 64px;" alt=""></p>
+                            <span>Folder</span>
+                        </div>
+                        <div class="col-xs-2 folders text-center">
+                            <p class="contain"><img src="http://res.cloudinary.com/dr5ei3rt1/image/upload/v1500502735/if_folder-blue_285658_f5jeko.svg" class="img-responsive  center-block" style="height: 64px;" alt=""></p>
+                            <span>Folder</span>
+                        </div>
+                        <div class="col-xs-2 folders text-center">
+                            <p class="contain"><img src="http://res.cloudinary.com/dr5ei3rt1/image/upload/v1500502735/if_folder-blue_285658_f5jeko.svg" class="img-responsive  center-block" style="height: 64px;" alt=""></p>
+                            <span>Folder</span>
+                        </div>
+                        <div class="col-xs-2 folders text-center">
+                            <p class="contain"><img src="http://res.cloudinary.com/dr5ei3rt1/image/upload/v1500502735/if_folder-blue_285658_f5jeko.svg" class="img-responsive  center-block" style="height: 64px;" alt=""></p>
+                            <span>Folder</span>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="fived-row-win"></div>
+        </div>
+        <div class="resizer"></div>
+    </div>
+    <div class="clearfix"></div>
+    <div class="image-overlay" id="image-overlay">
+        <div class="fluid-container">
+            <div class="first-row-img">
+                <span class="center-text head-over">My Image<br><br><br><font face="lucida fax" color="#00787d7"?>
+ Open Following:<a href="Photos/" target="_blank">
+<br>-Photos</a>
+<br>
+                </span>
+                <div class="right">
+                    <i class="fa fa-times" onclick="closeimg()"></i>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+            <div class="second-row-img">
+                <img src="assets/qwe.jpg" class="center-block img-responsive" style="height:80vh" alt="">
+            </div>
+        </div>
+    </div>
+
+    <div class="video-overlay" id="video-overlay">
+        <div class="fluid-container">
+            <div class="first-row-vid">
+                <span class="center-text head-over">My Video<br><br> <font face="lucida fax" color=-"#00787d7">
+                   Open Following:<br>
+                   <a href="webrun:vlc.exe">-VLC</a><br>
+                   <a href="webrun:wmplayer">-Windows Media Player</a>
+<br><br>
+
+
+                   <br> <a href="Videos/" target="_blank"> Open Videos</a>
+                   <br><br><br><a href="Music/" target="_blank"> open Music</a></font> 
+                </span>
+                <div class="right">
+                    <i class="fa fa-times" onclick="closevid()"></i>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+            <div class="second-row-vid">
+                <!--<video class="center-block" width="" height="" controls>
+                            <source src="img/myExplain_2.mp4" type="video/mp4">
+                            <source src="img/myExplain_2.ogg" type="video/ogg">
+                            Your browser does not support the video tag.
+                    </video>-->
+                <div style="position:relative;height:0;padding-bottom:56.25%;"><iframe src="assets/Introducing Windows 11 (Concept).mp4" style="position:absolute;width: 50%;height: 50vh;left: 25%;" width="640" height="360" frameborder="0" allowfullscreen></iframe></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="note-overlay" id="note-overlay">
+        <div class="fluid-container">
+            <div class="first-row-note">
+                <span class="center-text head-over">My Note</span>
+                <div class="right">
+                    <i class="fa fa-times" onclick="closenote()"></i>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+            <div class="second-row-note">
+                <textarea></textarea>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="about-overlay" id="about-overlay">
+        <div class="fluid-container">
+            <div class="first-row-img">
+                <span class="center-text head-over">Info about Windows 10 (S.K.S.M. Developers's ID)</span>
+                <div class="right">
+                    <i class="fa fa-times" onclick="closeabout()"></i>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+            <div class="second-row-abo">
+                <div>
+                    <img src="assets/asd.jpg" class="img-responsive" alt="">
+                    <p><Font color="#787d7">
+                        Hi, We Are The Developer of This Windows 10 :( . <br> This windows 10 give Experience to Windows 7 User's As a user's of Windows 10 <br> We 'are a Owner of That System. <br> My Number: 20+ <mark>01061578345</mark>. <br> This System needs Our Maded Application "WebRun" <br>    <h1>    <font color="#00787d7">          <br><br>    <center> <br> System Properties</center></font></h1><br><br> System type: 64 bit<br>RAM : 0.5Tb. <br> <br>
+                        Hardisk : TOSHIBA { 1024 TB } And SAN DISK Detecting . <br> Product Key : S>k>S.M.<br>
+                        <br> EnJoy This Windows  <br> Antivirus : Guardian Detecting <br>           Procers: Intel and Amecrican System 27 <br>Booster: 360 & Baidu<br> Thxnks of your time <br>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="start-window-fade hidden-start" id="start-window-fade"></div>
+    <div class="start-window hidden-start" id="start-window">
+        <div class="fluid-container" id="container-start">
+            <div class="row">
+                <div class="col-xs-1 first-column">
+                    <div class="icon-bottom" id="power" onclick="powerOff()">
+                        <i class="fa fa-power-off fa-1x" title="Off Your Windows 10 In Live Mode. For Retsrting just press F5"></i>
+                    </div>
+                  <a href="settings/index.html" target="_blank">  <div class="icon-bottom">
+                       <a href="settings/index.html" target="_blank">
+                        <i class="fa fa-cog fa-1x"></i>
+                    </a>
+                    </div></a>
+                    <div class="icon-bottom">
+                      <a href="webrun:C://Windows/explorer.exe"> 
+                       <i class="fa fa-folder-open-o fa-1x"></i>
+                   </a>
+                    </div>
+                    <div class="icon-bottom">
+                       <a href="webrun:C://Windows/explorer.exe"> 
+                         <i class="fa fa-user fa-1x"></i>
+                     </a>
+                    </div>
+                    <div class="icon-bottom open-icon-list">
+                       <a href="..\..\Power\windows\loding\Installer\Architecture and language\loding\install\Final loder\Account\asd\New folder\accounts of content\loder\loding\pro\indexp.html">
+                        <i class="fa fa-power-off fa-1x" title="Shutdown Your Windows 10"></i>
+                    </a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    </div>
+                </div>
+                <div class="col-xs-3 second-column">
+                    <div class="wrap-scroll">
+                        <div class="head-med">
+                            <small>The Most VisTed Sites</small>
+                        </div>
+                    <div class="media">
+                        <div class="media-left">
+                           
+                                <img class="media-object" src="http://res.cloudinary.com/dr5ei3rt1/image/upload/v1500503397/HTML_Logo_jkkttu.png" width="35" height="35" alt="...">
+                            
+                        </div>
+                        <div class="media-body">
+                            <small class="media-heading"><a href="https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=24&cad=rja&uact=8&ved=2ahUKEwjt-pOrza7fAhULFHIKHXFyAHQQFjAXegQIARAB&url=https%3A%2F%2Fwww.html-5-tutorial.com%2F&usg=AOvVaw0xEn862JJCa51hpvjwDEfT" target="_blank">Html, Html 5</a></small>
+                        </div>
+                    </div>
+                    <div class="media">
+                        <div class="media-left">
+                            <a href="http://www.css3.info/" target="_blank">
+                                <img class="media-object" src="http://res.cloudinary.com/dr5ei3rt1/image/upload/v1500503385/8b61de4c84033266e15317a6eb9fda2d-css3_cmaqgi.png" width="35" height="35" alt="...">
+                            </a>
+                        </div>
+                        <div class="media-body">
+                            <small class="media-heading"><a href="http://www.css3.info/" target="_blank">Css, Css 3</a></small>
+                        </div>
+                    </div>
+                    <div class="media">
+                        <div class="media-left">
+                            <a href="https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=2&cad=rja&uact=8&ved=2ahUKEwjy3437za7fAhVEfX0KHWYLBzIQFjABegQIChAB&url=https%3A%2F%2Fpure-js.com%2F&usg=AOvVaw1UDJHMLQpPzl-R7IJUf51o" target="_blank">
+                                <img class="media-object" src="http://res.cloudinary.com/dr5ei3rt1/image/upload/v1500503920/Javascript-shield_grysg1.png" width="35" height="35" alt="...">
+                            </a>
+                        </div>
+                        <div class="media-body">
+                            <small class="media-heading">.<a href="https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=2&cad=rja&uact=8&ved=2ahUKEwjy3437za7fAhVEfX0KHWYLBzIQFjABegQIChAB&url=https%3A%2F%2Fpure-js.com%2F&usg=AOvVaw1UDJHMLQpPzl-R7IJUf51o" target="_blank">Pure JavaScript</a></small>
+                        </div>
+                    </div>
+                    <div class="media">
+                        <div class="media-left">
+                            <a href="https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=21&cad=rja&uact=8&ved=2ahUKEwim3pmWzq7fAhWQXn0KHbywCBYQFjAUegQIChAB&url=https%3A%2F%2Fwww.bootstrapcdn.com%2F&usg=AOvVaw0G3EGrTw-z9urAyknl6iUA" target="_blank">
+                                <img class="media-object" src="http://res.cloudinary.com/dr5ei3rt1/image/upload/v1500503388/bootstrap-4_qmy2lh.svg" width="35" height="35" alt="...">
+                            </a>
+                        </div>
+                        <div class="media-body">
+                            <small class="media-heading"><a href="https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=21&cad=rja&uact=8&ved=2ahUKEwim3pmWzq7fAhWQXn0KHbywCBYQFjAUegQIChAB&url=https%3A%2F%2Fwww.bootstrapcdn.com%2F&usg=AOvVaw0G3EGrTw-z9urAyknl6iUA" target="_blank">Bootstrap</a></a></small>
+                        </div>
+                    </div>
+                    <div class="head-med mouse-prient">
+                        <small>See More <i class="fa fa-chevron-down fa-1x"></i></small>
+                    </div>
+                    <div class="head-med">
+                        <small>Windows Gadgets<div class="media-left">
+                            <a href="webrun:notepad.exe">
+                                <img class="media-object" src="assets/notepad.png" width="35" height="35" alt="...">
+                            </a>
+                        </div>
+                        <div class="media-body">
+                            <small class="media-heading"><a href="webrun:notepad.exe"> Windows 10 Notepad 
+                            </a></small>
+                        </div>
+                    </div>
+                    <div class="media">
+                        <div class="media-left">
+                            <a href="webrun:firefox.exe">
+                                <img class="media-object" src="http://res.cloudinary.com/dr5ei3rt1/image/upload/v1500504055/Firefox_ivwjwz.png" width="35" height="35" alt="...">
+                            </a>
+                        </div>
+                        <div class="media-body">
+                            <small class="media-heading"><a href="webrun:firefox.exe"> Firefox</a></small>
+                        </div>
+                    </div>
+                    <div class="media">
+                        <div class="media-left">
+                            <a href="webrun:cmd.exe">
+                                <img class="media-object" src="assets/cmd.png" width="35" height="35" alt="...">
+                            </a>
+                        </div>
+                        <div class="media-body">
+                            <small class="media-heading"><a href="webrun:cmd.exe">CMD</a></small>
+                        </div>
+                    </div>
+                    <div class="media">
+                        <div class="media-left">
+                            <a href="games/games.html">
+                                <img class="media-object" src="assets/game.jpg" width="35" height="35" alt="...">
+                            </a>
+                        </div>
+                        <div class="media-body">
+                            <small class="media-heading"><a href="games/games.html" target="_blank">Windows 10 game</a></small>
+                        </div>
+                    </div>
+                    <div class="media">
+                        <div class="media-left">
+                            <a href="webrun:wmplayer.exe">
+                                <img class="media-object" src="assets/groove.jpg" width="35" height="35" alt="...">
+                            </a>
+                        </div>
+                        <div class="media-body">
+                            <small class="media-heading"><a href="webrun:wmplayer.exe">Media Player</a></small>
+                        </div>
+                    </div>
+                    <div class="media">
+                        <div class="media-left">
+                            <a href="webrun:vlc.exe">
+                                <img class="media-object" src="assets/film & tv.png" width="35" height="35" alt="...">
+                            </a>
+                        </div>
+                        <div class="media-body">
+                            <small class="media-heading"> <a href="webrun:vlc.exe">VLC</a></small>
+                        </div>
+                    </div>
+                    <div class="media">
+                        <div class="media-left">
+                            <a href="pc/index.html">
+                                <img class="media-object" src="assets/folder.jpg" width="35" height="35" alt="...">
+                            </a>
+                        </div>
+                        <div class="media-body">
+                            <small class="media-heading"><a href="pc/index.html" target="_blank">Open Your Files Of Drive C: , D: , ......</a></small>
+                        </div>
+                    </div>
+                    <div class="media">
+                        <div class="media-left">
+                            <a href="Music/">
+                                <img class="media-object" src="assets/music folder.png" width="35" height="35" alt="...">
+                            </a>
+                        </div>
+                        <div class="media-body">
+                            <small class="media-heading"><a href="Music/" target="_blank">Music Folder</a></small>
+                        </div>
+                    </div>
+                    <div class="media">
+                        <div class="media-left">
+                            <a href="Videos/">
+                                <img class="media-object" src="assets/videos.png" width="35" height="35" alt="...">
+                            </a>
+                        </div>
+                        <div class="media-body">
+                            <small class="media-heading"><a href="Videos/" target="_blank">Videos</a></small>
+                        </div>
+                    </div>
+
+
+
+                    </div>
+                </div>
+                <div class="col-xs-4 third-column">
+                    <div class="head-box">
+                        <small>Look Here</small>
+                    </div><a href="https://mail.google.com" target="_blank">
+                    <div class="row">
+                        <div class="col-xs-8 col-xs-push-4 box">
+                            <div class="box-style"> <a href="https://mail.google.com" target="_blank">
+                                <div class="icon-bottom text-center" style="margin: 20px;">
+                                   <i class="fa fa-envelope fa-2x"></i>
+                                </div></a>
+                                <div>
+                                    Mail
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-4 col-xs-pull-8 box">
+                            <div class="box-style text-center">
+                                <div class="mycontainer">
+                                    <div id="day">day</div>
+                                    <div id="number-day">number</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-8 box">
+                            <div class="box-style">
+                                <div class="icon-bottom text-center" style="margin: 20px;">
+                                   <a href="webrun:iexplore.exe"> <i class="fa fa-internet-explorer fa-2x"></i></a>
+                                </div>
+                                <div>
+                                    Internet Explorer
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-4 box">
+                            <div class="box-style">
+                                <div class="icon-bottom text-center" style="margin: 20px;">
+                                   <a href="Pictures/" target="_blank"> <i class="fa fa-picture-o fa-2x"></i></a>
+                                </div>
+                                <div>
+                                    Picture
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-4 box">
+                            <div class="box-style">
+                                <div class="icon-bottom text-center" style="margin: 20px;">
+                                   <a href="https://www.bing.com/search?q=weather&qs=n&form=GEOTRI&sp=-1&pq=weather&sc=9-7&sk=&cvid=DF85638A243E47EC8C42AF4BFC0B0EF6" target="_blank"> <i class="fa fa-sun-o fa-2x"></i></a>
+                                </div>
+                                <div>
+                                    Weather
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-4 box">
+                            <div class="box-style">
+                                <div class="icon-bottom text-center" style="margin: 20px;">
+                                    <a href="webrun:C:\Windows\explorer.exe"><i class="fa fa-laptop fa-2x"></i></a>
+                                </div>
+                                <div>
+                                    User
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-4 box">
+                            <div class="box-style" style="background-color: #00787d7 background-size: cover;">
+                                <div class="icon-bottom text-center" style="margin: 20px;">
+                                   <a href="https://twitter.com" target="_blank"> <i class="fa fa-twitter fa-2x"></i></a>
+                                </div>
+                                <div>
+                                    twitter <i class="fa fa-twitter" style="float: right;line-height: 21px;"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-4 box">
+                            <div class="box-style">
+                                <div class="icon-bottom text-center" style="margin: 20px;">
+                                  <a href="https://www.microsoft.com/en-in/windows/windows-10-apps" target="_blank">  <i class="fa fa-shopping-bag  fa-2x"></i></a>
+                                </div>
+                                <div>
+                                    store
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-4 box">
+                            <div class="box-style">
+                                <div class="icon-bottom text-center" style="margin: 20px;">
+                                   <a href="https://www.skype.com/en/" target="_blank"> <i class="fa fa-skype  fa-2x"></i></a>
+                                </div>
+                                <div>
+                                    skype
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-4 box">
+                            <div class="box-style text-center" style="background-color: #00787d7 ;background-size: cover;background-position: center;">
+                                <div class="icon-bottom text-center" style="margin: 20px;">
+                                 <center>  <a href="Widgets/index.html" target="_blank">Open Widgets</a></center>
+                                </div>
+                              
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-4">
+                    <div class="head-box">
+                        <small>See And Explore</small>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-4 box">
+                            <div class="box-style" style="background-color: #00787d7 background-size: cover;background-position: right;">
+                                <div class="icon-bottom text-center" style="margin: 20px;">
+                                   
+                                </div>
+                                <div style="font-size: 10px;">
+                                   <a href="games/games.html" target="_blank"><big>Windows 10 Games</big>
+
+</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-4 box">
+                            <div class="box-style">
+                                <div class="icon-bottom text-center" style="margin: 20px;">
+                                   <a href="Music/" target="_blank"> <i class="fa fa-music fa-2x"></i></a>
+                                </div>
+                                <div style="font-size: 10px;">
+                                    Music
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-4 box">
+                            <div class="box-style">
+                                <div class="icon-bottom text-center" style="margin: 20px;">
+                                   <a href="Videos/" target="_blank"> <i class="fa fa-film fa-2x"></i></a>
+                                </div>
+                                <div style="font-size: 10px;">
+                                    Film
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-4 box">
+                            <div class="box-style" style="background-color: #00787d7 background-size: cover;background-position: center;">
+                                <div class="icon-bottom text-center" style="margin: 20px;">
+                                     <center><a href="Google Apps/index.html" target="_blank"><i class="fa fa-google"></i><br>
+
+                                   <big> Google Apps</big></a></center>
+
+                                </div>
+                                <div style="font-size: 10px;">
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-4 box">
+                            <div class="box-style" style="background-color: #00787d7 background-size: cover;background-position: right;">
+                                <div class="icon-bottom text-center" style="margin: 20px;">
+                                  <a href="http://www.msn.com/en-in/?ocid=BHEA000" target="_blank">
+                                    <i class="fa fa-diamond" aria-hidden="true"></i>
+                                  </a>
+                                </div>
+                                <div style="font-size: 10px;">
+                                   <a href="http://www.msn.com/en-in/?ocid=BHEA000" target="_blank">
+                                   
+MSN</a>
+
+                                  
+                
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-4 box">
+                            <div class="box-style" style="background-color: #00787d7 ;background-size: cover;background-position: center;">
+                         <center> <a href="https://www.google.com/drive/" target="_blank"><i class="fa fa-hdd-o" aria-hidden="true"></i><br>Drive</a></center>
+                                </div>
+                                <div style="font-size: 10px;">
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-8 col-xs-push-4 box">
+                            <div class="box-style" style="background-color: #00787d7 ;background-size: 130%;background-position: center;">
+                                <div class="icon-bottom text-center" style="margin: 20px;">
+                                   
+                                </div>
+                                <div>
+                                   <a href="https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=1&cad=rja&uact=8&ved=2ahUKEwikg_LqlLbfAhWEV30KHazRAtgQFjAAegQICRAB&url=https%3A%2F%2Fnews.google.co.in%2F&usg=AOvVaw3uNQ7Ub2ejt-uqh2ESLi6i" target="_blank"> <center><i class="fa fa-newspaper-o" aria-hidden="true"></i>
+<br>
+ News
+</a></center>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-4 col-xs-pull-8 box">
+                            <div class="box-style" style="background-color: #00787d7 background-size: cover;background-position: center;">
+                                <div class="icon-bottom text-center" style="margin: 20px;">
+                                <center>  <a href="settings/index.html" target="_blank" target="_blank">Open Settings</a></center>
+                                </div>
+                                <div>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-4 box">
+                            <div class="box-style" style="background-color: #00787d7 background-size: cover;background-position: center;">
+                                <div class="icon-bottom text-center" style="margin: 20px;">
+                                    <center> <a href="Tools/index.html" target="_blank">Tools</a> <center>
+                                </div>
+                                <div style="font-size: 10px;">
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-4 box">
+                            <div class="box-style" style="background-color: #007878d7 background-size: cover;background-position: center;">
+                                <div class="icon-bottom text-center" style="margin: 20px;">
+                                   <i class="fas fa-igloo"></i> 
+                                </div>
+                                <div style="font-size:12px;"><a href="webrun:EXCEL.exe">
+                                    MS EXCEL2013</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-4 box">
+                            <div class="box-style" style="background-color: #00787d7 background-size: cover;background-position: center;">
+                                <div class="icon-bottom text-center" style="margin: 20px;">
+                               <center>  <a href="airsendit/index.html" target="_blank"><center>AirSenIt</center>
+                                </a></center>
+                                </div>
+                               
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="nav navbar-inverse navbar-fixed-bottom footer text-center">
+        <div class="fluid-container">
+            <div class="row">
+                <div class="left">
+                    <div class="col-xs-1-me">
+                        <div class="icon-bottom strat-win" id="strat-win" title="Start">
+                            <i class="fa fa-windows fa-2x"></i>
+                        </div>
+                    </div>
+                   <a href="https://www.bing.com" target="_blank">
+                    <div class="col-xs-1-me" title="Windows have Not Allowed To Start Cortana. See Settings">
+                        <div class="icon-bottom">
+                            <i class="fa fa-search fa-2x"></i>
+                        </div>
+                    </div></a>
+                  <a href="https://mail.google.com" target="_blank">
+                    <div class="col-xs-1-me">
+                        <div class="icon-bottom">
+                            <i class="fa fa-envelope fa-2x"></i>
+                        </div>
+                    </div></a>
+                    <div class="col-xs-1-me" id="a1">
+                        <div class="icon-bottom">
+                            <i class="fa fa-folder fa-2x"></i>
+                        </div>
+                    </div>
+                    <div class="col-xs-1-me" id="a2">
+                        <div class="icon-bottom">
+                            <a href="#" target="_blank"><i class="fa fa-picture-o fa-2x"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-xs-1-me" id="a3">
+                        <div class="icon-bottom">
+                           <a href="#" target="_blank"> <i class="fa fa-film fa-2x"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-xs-1-me" id="a4">
+                        <div class="icon-bottom">
+                            <i class="fa fa-file-text-o fa-2x"></i>
+                        </div>
+                    </div>
+                    <div class="col-xs-1-me" id="a5">
+                        <div class="icon-bottom">
+                            <i class="fa fa-id-card fa-2x"></i>
+                        </div>
+                    </div>
+                    <span class=".clearfix"></span>
+                </div>
+                <div class="right">
+                    <div class="col-xs-1-me" id="close-all" title="Show Dekstop Or Close Applications Or create a New Dekstop + ">
+                    </div>
+                    <div class="col-xs-1-me" title="Windows have No New Notification">
+                        <div class="icon-bottom" title="Windws have No New Notification">
+                            <i class="fa fa-commenting-o fa-2x"></i>
+                        </div>
+                    </div>
+                    <div class="date col-xs-1-me" title="Time According To Windows Detecting Location">
+                        <span id="time">00:00</span>
+                        <span id="history">00/00/0000</span>
+                    </div>
+                    <div class="col-xs-1-me" title="speakers:80">
+                        <div class="icon-bottom">
+                            <i class="fa fa-volume-up  fa-2x"></i>
+                        </div>
+                    </div><div class="col-xs-1-me"><div class="ico" title="50% remaining"><i class="fa fa-battery-half"></i></div></div>
+
+
+
+<div class="col-xs-1-me" title="Jio Fi 5 Connected
+Internet Access ">
+                        <div class="icon-bottom">
+                            <i class="fa fa-wifi" aria-hidden="true"></i>
+</div></div>
+
+
+                    <div class="col-xs-1-me" title="The option-box is not display here. If you Want have a Look In Tools">
+                        <div class="icon-bottom">
+                            <i class="fa fa-chevron-up fa-2x"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</div>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js'></script>
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script  src="js/index.js"></script>
+
+
+
+
+</body>
+
+</html>

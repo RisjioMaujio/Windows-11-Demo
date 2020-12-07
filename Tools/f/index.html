@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title>Pomodoro Timer</title>
+  
+  
+  <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Chewy|Open+Sans'>
+
+      <link rel="stylesheet" href="css/style.css">
+
+  
+</head>
+
+<body>
+
+  <h1 class="header">Pomodoro Timer</h1>
+
+<div class="length-control">
+    <div class="length-control__wrap">
+        <p class="length-control__header">BREAK LENGTH</p>
+        <a href="#" class="minus length-control__button">-</a>
+        <span class="length-control__number length-control__number__break">5</span>
+        <a href="#" class="plus length-control__button">+</a>
+    </div>
+    <div class="length-control__wrap">
+        <p class="length-control__header">SESSION LENGTH</p>
+        <a href="#" class="minus length-control__button">-</a>
+        <span class="length-control__number length-control__number__session">25</span>
+        <a href="#" class="plus length-control__button">+</a>
+    </div>
+</div>
+
+<a href="#" class="timer">
+    <span class="timer-header__action">Start!</span>
+    <p class="timer-header__general">Session</p>
+    <span class="timer-header__pause"></span>
+
+    <div class="timer-count">
+        <div class="timer-count__hours timer-count__wrap">
+            <div class="timer-count__hours-chart timer-count__chart" data-percent="0"></div>
+            <span class="timer-count__hours-text timer-count__text"></span>
+            <span class="timer-count__label">Hours</span>
+        </div>
+        <div class="timer-count__minutes timer-count__wrap">
+            <div class="timer-count__minutes-chart timer-count__chart" data-percent="0"></div>
+            <span class="timer-count__minutes-text timer-count__text"></span>
+            <span class="timer-count__label">Minutes</span>
+        </div>
+        <div class="timer-count__seconds timer-count__wrap">
+            <div class="timer-count__seconds-chart timer-count__chart" data-percent="0"></div>
+            <span class="timer-count__seconds-text timer-count__text"></span>
+            <span class="timer-count__label">Seconds</span>
+        </div>
+    </div>
+</a>
+  <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+
+  
+
+    <script  src="js/index.js"></script>
+
+
+
+
+</body>
+
+</html>

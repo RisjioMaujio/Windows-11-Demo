@@ -1,0 +1,284 @@
+html { box-sizing: border-box; } *,*::before,*::after { box-sizing: inherit; position: relative; }
+body { margin: 0; background-color: whitesmoke; }
+
+
+.stage{
+    height: 100vh;
+    perspective: 1000px;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    @media (max-width:480px){
+        transform: scale(0.8)
+    }
+}
+time {
+    position: absolute;
+    left: 50%; 
+    transform: translate(-50%, 110px);
+    color: #666;
+    font-size: 0.8em;
+    
+}
+
+.group {
+    transform-style: preserve-3d;
+    transition: 1000ms;
+
+    //  groups
+    &.g1 { left: 110px; z-index: 1 }
+    &.g2 { left: -110px; z-index: 2 }    
+
+    //  dice
+    .d1,.d3 { left: -55px }
+    .d2,.d4 { left: 55px; }   
+    
+}
+.dice {
+    position: absolute;
+    top: 50%; 
+    left: 50%;
+    transform-style: preserve-3d;
+
+    text-align: center;
+    font-size: 45px; 
+    line-height: 2;
+
+    transition: 1000ms;    
+    
+    .face { 
+        $edge: 90px;        
+    
+        position: absolute;
+        margin: -0.5 * $edge;
+        width: $edge; 
+        height: $edge;
+        outline: 1px solid transparent;
+
+        &:nth-child(1) { transform: rotateY(  0deg) translateZ(0.5 * $edge); }
+        &:nth-child(2) { transform: rotateY( 90deg) translateZ(0.5 * $edge); }
+        &:nth-child(3) { transform: rotateY(180deg) translateZ(0.5 * $edge); }
+        &:nth-child(4) { transform: rotateY(270deg) translateZ(0.5 * $edge); }
+        &:nth-child(5) { transform: rotateX( 90deg) translateZ(0.5 * $edge); }
+        &:nth-child(6) { transform: rotateX(-90deg) translateZ(0.5 * $edge);}
+        
+        opacity: 0.9;
+        &:after {
+            position: absolute;            
+            top: 0;
+            left: 0;
+            content:'';
+            display: block;
+            width: 0;
+            height: 0;
+        }
+    }
+    &.d1 .face, &.d2 .face { background-image: linear-gradient(-45deg, tomato, red); }
+    &.d3 .face, &.d4 .face { background-image: linear-gradient(-45deg, yellowgreen, olive); }    
+}
+
+
+
+
+
+
+//  numbers 
+.num-0:after {
+    $color: rgba(#fff, 0.8);
+    box-shadow: 
+        25px 15px 0 5px $color,         
+        35px 15px 0 5px $color,                
+        45px 15px 0 5px $color,            
+        55px 15px 0 5px $color, 
+        65px 15px 0 5px $color,         
+        25px 25px 0 5px $color,                
+        65px 25px 0 5px $color,                        
+        25px 35px 0 5px $color,                
+        65px 35px 0 5px $color,                        
+        25px 45px 0 5px $color,                
+        65px 45px 0 5px $color,                        
+        25px 55px 0 5px $color,                
+        65px 55px 0 5px $color,                        
+        25px 65px 0 5px $color,                
+        65px 65px 0 5px $color,                
+        25px 75px 0 5px $color,            
+        35px 75px 0 5px $color,                
+        45px 75px 0 5px $color,            
+        55px 75px 0 5px $color,            
+        65px 75px 0 5px $color,                    
+}
+
+.num-1:after {
+    $color: rgba(#fff, 0.8);
+    box-shadow: 
+        45px 15px 0 5px $color,            
+        45px 25px 0 5px $color,            
+        45px 35px 0 5px $color,            
+        45px 45px 0 5px $color,            
+        45px 55px 0 5px $color,            
+        45px 65px 0 5px $color,            
+        45px 75px 0 5px $color
+}
+
+.num-2:after {
+    $color: rgba(#fff, 0.8);    
+    box-shadow: 
+        25px 15px 0 5px $color,         
+        35px 15px 0 5px $color,                
+        45px 15px 0 5px $color,            
+        55px 15px 0 5px $color, 
+        65px 15px 0 5px $color,         
+        65px 25px 0 5px $color,                        
+        65px 35px 0 5px $color,                        
+        25px 45px 0 5px $color, 
+        35px 45px 0 5px $color,                
+        45px 45px 0 5px $color,            
+        55px 45px 0 5px $color, 
+        65px 45px 0 5px $color,                        
+        25px 55px 0 5px $color,                
+        25px 65px 0 5px $color,                
+        25px 75px 0 5px $color,            
+        35px 75px 0 5px $color,                
+        45px 75px 0 5px $color,            
+        55px 75px 0 5px $color,            
+        65px 75px 0 5px $color,                    
+}
+
+.num-3:after {
+    $color: rgba(#fff, 0.8);    
+    box-shadow: 
+        25px 15px 0 5px $color,         
+        35px 15px 0 5px $color,                
+        45px 15px 0 5px $color,            
+        55px 15px 0 5px $color, 
+        65px 15px 0 5px $color,         
+        65px 25px 0 5px $color,                        
+        65px 35px 0 5px $color, 
+        35px 45px 0 5px $color,         
+        45px 45px 0 5px $color,                
+        55px 45px 0 5px $color,                
+        65px 45px 0 5px $color,                        
+        65px 55px 0 5px $color,                        
+        65px 65px 0 5px $color,                
+        25px 75px 0 5px $color,            
+        35px 75px 0 5px $color,                
+        45px 75px 0 5px $color,            
+        55px 75px 0 5px $color,            
+        65px 75px 0 5px $color,                    
+}
+.num-4:after {
+    $color: rgba(#fff, 0.8);    
+    box-shadow: 
+        25px 15px 0 5px $color,         
+        65px 15px 0 5px $color,         
+        25px 25px 0 5px $color,                
+        65px 25px 0 5px $color,                        
+        25px 35px 0 5px $color,                
+        65px 35px 0 5px $color,                        
+        25px 45px 0 5px $color,                
+        35px 45px 0 5px $color, 
+        45px 45px 0 5px $color,         
+        55px 45px 0 5px $color,                 
+        65px 45px 0 5px $color,                        
+        65px 55px 0 5px $color,                        
+        65px 65px 0 5px $color,                
+        65px 75px 0 5px $color,                    
+}
+
+
+.num-5:after {
+    $color: rgba(#fff, 0.8);    
+    box-shadow: 
+        25px 15px 0 5px $color,         
+        35px 15px 0 5px $color,                
+        45px 15px 0 5px $color,            
+        55px 15px 0 5px $color, 
+        65px 15px 0 5px $color,         
+        25px 25px 0 5px $color,                        
+        25px 35px 0 5px $color,                        
+        25px 45px 0 5px $color, 
+        35px 45px 0 5px $color,                
+        45px 45px 0 5px $color,            
+        55px 45px 0 5px $color, 
+        65px 45px 0 5px $color,                        
+        65px 55px 0 5px $color,                
+        65px 65px 0 5px $color,                
+        25px 75px 0 5px $color,            
+        35px 75px 0 5px $color,                
+        45px 75px 0 5px $color,            
+        55px 75px 0 5px $color,            
+        65px 75px 0 5px $color,                    
+}
+
+//  also acts as 9
+.num-6:after {
+    $color: rgba(#fff, 0.8);    
+    box-shadow: 
+        25px 15px 0 5px $color,         
+        35px 15px 0 5px $color,                
+        45px 15px 0 5px $color,            
+        55px 15px 0 5px $color, 
+        65px 15px 0 5px $color,         
+        25px 25px 0 5px $color,                
+        25px 35px 0 5px $color,                
+        25px 45px 0 5px $color,  
+        35px 45px 0 5px $color,          
+        45px 45px 0 5px $color,                  
+        55px 45px 0 5px $color,                  
+        65px 45px 0 5px $color,                        
+        25px 55px 0 5px $color,                
+        65px 55px 0 5px $color,                        
+        25px 65px 0 5px $color,                
+        65px 65px 0 5px $color,                
+        25px 75px 0 5px $color,            
+        35px 75px 0 5px $color,                
+        45px 75px 0 5px $color,            
+        55px 75px 0 5px $color,            
+        65px 75px 0 5px $color,                 
+}
+
+.num-7:after {
+    $color: rgba(#fff, 0.8);  
+    box-shadow: 
+        25px 15px 0 5px $color,         
+        35px 15px 0 5px $color,                
+        45px 15px 0 5px $color,            
+        55px 15px 0 5px $color, 
+        65px 15px 0 5px $color,         
+        65px 25px 0 5px $color,                        
+        65px 35px 0 5px $color,                        
+        65px 45px 0 5px $color,  
+        65px 55px 0 5px $color,                        
+        65px 65px 0 5px $color,                
+        65px 75px 0 5px $color,                    
+}
+
+.num-8:after {
+    $color: rgba(#fff, 0.8);  
+    box-shadow: 
+        25px 15px 0 5px $color,         
+        35px 15px 0 5px $color,                
+        45px 15px 0 5px $color,            
+        55px 15px 0 5px $color, 
+        65px 15px 0 5px $color,         
+        25px 25px 0 5px $color,                
+        65px 25px 0 5px $color,                        
+        25px 35px 0 5px $color,                
+        65px 35px 0 5px $color,                        
+        25px 45px 0 5px $color,                
+        35px 45px 0 5px $color,                
+        45px 45px 0 5px $color,            
+        55px 45px 0 5px $color, 
+        65px 45px 0 5px $color,  
+        25px 55px 0 5px $color,                
+        65px 55px 0 5px $color,                        
+        25px 65px 0 5px $color,                
+        65px 65px 0 5px $color,                
+        25px 75px 0 5px $color,            
+        35px 75px 0 5px $color,                
+        45px 75px 0 5px $color,            
+        55px 75px 0 5px $color,            
+        65px 75px 0 5px $color,                    
+}

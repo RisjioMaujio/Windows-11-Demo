@@ -1,0 +1,156 @@
+body {
+    min-width: 320px;
+    font-family: 'Open Sans', sans-serif;
+    background-color: #00c3cb;
+    color: white;
+
+    transition: background-color .5s;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+.body-session {
+    background-color: #7D1717;
+}
+
+.body-break {
+    background-color: #0E5A15;
+}
+
+.body-pause {
+    background-color: #969000;
+}
+
+.header {
+    margin: 10px 0 5px;
+    font-family: 'Chewy', cursive;
+    text-align: center;
+    font-size: 3em;
+}
+
+.length-control {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.length-control__wrap {
+    display: inline-block;
+    width: 295px;
+    text-align: center;
+}
+
+.length-control__wrap.disabled > *,
+.length-control__wrap.disabled a:hover {
+    opacity: .3;
+}
+
+.length-control__header {
+    font-size: 1.3em;
+}
+
+.length-control__button {
+    display: inline-block;
+    padding: 0 10px;
+    font-size: 2.5em;
+    opacity: .7;
+    transition: opacity .5s;
+}
+
+.length-control__button:hover {
+    opacity: .9;
+}
+
+.length-control__button.disabled {
+    opacity: .2;
+}
+
+.length-control__number {
+    width: 90px;
+    display: inline-block;
+    font-size: 3em;
+
+}
+
+.timer {
+    display: block;
+    position: relative;
+    max-width: 600px;
+    margin: 30px auto 0;
+    padding: 20px 0;
+    border: solid 1px rgba(255, 255, 255, .1);
+}
+
+.timer:hover {
+    border-color: rgba(255, 255, 255, .3);
+}
+
+.timer:hover .timer-header__action {
+    opacity: .7;
+}
+
+.timer-header__action {
+    position: absolute;
+    top: 10px;
+    left: 15px;
+    font-size: 1.5em;
+    opacity: .5;
+    transition: opacity .5s;
+}
+
+.timer-header__general {
+    margin: 10px 0 30px;
+    text-align: center;
+    font-size: 2em;
+}
+
+.timer-header__pause {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 1.5em;
+    opacity: .5;
+}
+
+.timer-count {
+    padding-left: 3px;
+}
+
+.timer-count__wrap {
+    display: inline-block;
+    position: relative;
+    width: 195px;
+    height: 195px;
+}
+
+.timer-count__chart {
+    position: absolute;
+    top: 0;
+    left: 7px;
+}
+
+.timer-count__text {
+    display: block;
+    padding-top: 45px;
+    font-size: 3em;
+    text-align: center;
+}
+
+.timer-count__label {
+    display: block;
+    text-align: center;
+    opacity: .8;
+}
+
+@media all and (max-width: 620px) {
+    .length-control__wrap {
+        display: block;
+        width: auto;
+    }
+    .timer-count__wrap {
+        display: block;
+        margin: 0 auto;
+    }
+}
